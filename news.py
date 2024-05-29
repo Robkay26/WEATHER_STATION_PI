@@ -20,5 +20,5 @@ class News:
                 line = textwrap.wrap(line, width=60)
                 list_news.append(line)
         else:
-            list_news = ["Problème de chargement des news"]
+            list_news = ["Problem loading news"]
         return list_news
