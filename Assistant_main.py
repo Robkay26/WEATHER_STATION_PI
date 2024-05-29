@@ -13,9 +13,9 @@ from datetime import time as _t
 load_dotenv()
 colorama.init(autoreset=True)
 
-# Paris
-lat = "48.864716"
-lon = "2.349014"
+#Home 53.303038595441116, -6.2569564270190545
+lat = "53.303038595441116"
+lon = "-6.2569564270190545"
 api_key_weather = os.environ.get("WEATHER_API_KEY")
 api_key_news = os.environ.get("NEWS_API_KEY")
 debug = 0
