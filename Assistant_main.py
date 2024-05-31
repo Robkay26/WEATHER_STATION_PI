@@ -89,7 +89,7 @@ def main():
         data_rain = weather.rain_next_hour()
 
         # FRAME
-        display.draw_black.text((20, 150), "Pluie dans l'heure - " + time.strftime("%H:%M", time.localtime()), fill=0,
+        display.draw_black.text((20, 150), "Rain within the hour - " + time.strftime("%H:%M", time.localtime()), fill=0,
                                 font=font16)  # NEXT HOUR RAIN LABEL
         display.draw_black.rectangle((20, 175, 320, 195), fill=255, outline=0, width=1)  # Red rectangle = rain
 
@@ -159,7 +159,7 @@ def main():
         # Draw labels for temperature and rain probability
         display.draw_black.text((current_left + 100, min_up + 40), "min", fill=0, font=font14)
         display.draw_black.text((current_left + 100, min_up + 60), "max", fill=0, font=font14)
-        display.draw_black.text((current_left + 100, min_up + 80), "pluie", fill=0, font=font14)
+        display.draw_black.text((current_left + 100, min_up + 80), "rain", fill=0, font=font14)
 
 
 
