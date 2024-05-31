@@ -29,6 +29,7 @@ class Weather:
         return self.data
 
     def current_time(self):
+        print(f"Current time: {self.data["current"]["dt"]}")
         return time.strftime("%d/%m/%Y %H:%M", time.localtime(self.data["current"]["dt"]))
 
     def current_temp(self):
