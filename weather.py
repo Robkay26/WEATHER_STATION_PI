@@ -21,6 +21,7 @@ class Weather:
         self.prevision[0] = self.data["daily"][0]["dt"]
         self.prevision[1][6] = [self.data["daily"][0]["pressure"],
                                 round(self.data["daily"][0]["temp"]["day"] - 273.15, 0)]
+        print(self.data)
         pass
 
     def update(self):
