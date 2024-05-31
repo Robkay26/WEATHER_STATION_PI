@@ -135,31 +135,31 @@ class Weather:
             id = id // 100
             if id == 2:
                 icon = "thunder"
-                weather_detail = "Orage"
+                weather_detail = "Thunder"
             elif id == 3:
                 icon = "drizzle"
-                weather_detail = "Bruine"
+                weather_detail = "Drizzle"
             elif id == 5:
                 icon = "rain"
-                weather_detail = "Pluie"
+                weather_detail = "Rain"
             elif id == 6:
                 icon = "snow"
-                weather_detail = "Neige"
+                weather_detail = "Snow"
             elif id == 7:
                 icon = "atm"
-                weather_detail = "Brouillard"
+                weather_detail = "Fog"
             else:
-                weather_detail = "Erreur"
+                weather_detail = "Error"
         else:
             if id == 801:
                 icon = "25_clouds"
-                weather_detail = "Peu nuageux"
+                weather_detail = "Partly Cloudy"
             elif id == 802:
                 icon = "50_clouds"
-                weather_detail = "Nuageux"
+                weather_detail = "Cloudy"
             elif id == 803 or id == 804:
                 icon = "100_clouds"
-                weather_detail = "Couvert"
+                weather_detail = "Very Cloudy"
 
         return icon, weather_detail
 
