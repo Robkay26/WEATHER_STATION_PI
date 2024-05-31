@@ -50,7 +50,7 @@ def check_for_shutdown():
 def main():
 
     args = parse_arguments()
-    
+    print(weather.current_time())
     ##################################################################################################################
     # FRAME
     display.draw_black.rectangle((5, 5, 795, 475), fill=255, outline=0, width=2)  # INNER FRAME
