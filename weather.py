@@ -21,7 +21,6 @@ class Weather:
         self.prevision[0] = self.data["daily"][0]["dt"]
         self.prevision[1][6] = [self.data["daily"][0]["pressure"],
                                 round(self.data["daily"][0]["temp"]["day"] - 273.15, 0)]
-        print(self.data)
         pass
 
     def update(self):
@@ -70,8 +69,13 @@ class Weather:
         return "{:.0f}".format(self.data["current"]["wind_speed"] * 3.6) + "km/h", direction
 
     def current_weather(self):
-        description = self.data["current"]["weather"][0]["id"]
-        return description
+        try:
+            print("Data in current_weather:", self.data)  # Debugging line
+            description = self.data["current"]["weather"][0]["id"]
+            return description
+        except KeyError as e:
+            print(f"Key error in current_weather: {e}")
+            return "Invalid weather data"
 
     def rain_next_hour(self):
         input_minutely = self.data["minutely"]
