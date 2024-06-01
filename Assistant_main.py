@@ -69,8 +69,8 @@ def main():
     display.draw_icon(20, 55, "r", 75, 75,
                       weather.weather_description(weather.current_weather())[0])  # CURRENT WEATHER ICON
     display.draw_black.text((120, 15), weather.current_temp(), fill=0, font=font48)  # CURRENT TEMP
-    display.draw_black.text((230, 15), weather.current_hum(), fill=0, font=font48)  # CURRENT HUM
-    display.draw_black.text((245, 65), "Humidity", fill=0, font=font12)  # LABEL "HUMIDITY"
+    #display.draw_black.text((230, 15), weather.current_hum(), fill=0, font=font48)  # CURRENT HUM
+    #display.draw_black.text((245, 65), "Humidity", fill=0, font=font12)  # LABEL "HUMIDITY"
     display.draw_black.text(
         (120, 75),
         f"{weather.current_wind()[0]} {weather.current_wind()[1]}",

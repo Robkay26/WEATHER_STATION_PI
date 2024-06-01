@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 
 ImageFont.load_default()
 
@@ -55,4 +55,11 @@ class Display:
     def draw_image(self, x, y, l, h, image):
         image = Image.open(f"photo/{image}.png")
         image = image.resize((l, h))
-        self.im_black.paste(image, (x,y), image)
+                # Create masks for black and red
+        mask_black = ImageOps.invert(image.convert('L')).point(lambda p: p < 128 and 255)
+        mask_red = image.convert('L').point(lambda p: p > 127 and 255)
+
+        # Paste the masks onto the respective image layers
+        self.im_black.paste(image.convert('1'), (x, y), mask_black)
+        self.im_red.paste(image.convert('1'), (x, y), mask_red)
+

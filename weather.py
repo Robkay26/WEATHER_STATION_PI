@@ -130,7 +130,7 @@ class Weather:
 
     def weather_description(self, id):
         icon = "sun"
-        weather_detail = "Beau temps"
+        weather_detail = "Sunny"
         if id // 100 != 8:
             id = id // 100
             if id == 2:
