@@ -55,3 +55,4 @@ class Display:
     def draw_image(self, x, y, l, h, image):
         image = Image.open(f"photo/{image}.png")
         image = image.resize((l, h))
+        self.im_black.paste(image, (x,y), image)
