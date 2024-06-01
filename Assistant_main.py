@@ -89,7 +89,7 @@ def main():
         data_rain = weather.rain_next_hour()
 
         # FRAME
-        display.draw_black.text((20, 150), "Rain within the hour - " + time.strftime("%H:%M", time.localtime()), fill=0,
+        display.draw_black.text((20, 150), "upcoming rain - " + time.strftime("%H:%M", time.localtime()), fill=0,
                                 font=font16)  # NEXT HOUR RAIN LABEL
         display.draw_black.rectangle((20, 175, 320, 195), fill=255, outline=0, width=1)  # Red rectangle = rain
 
@@ -228,25 +228,26 @@ def main():
 
     ###################################################################################################################
     # NEWS UPDATE
-    news_selected = news.selected_title()
-    display.draw_black.text((360, 10), "NEWS", fill=0, font=font24)
-    for i in range(5):
-        if len(news_selected) == 1:
-            display.draw_black.text((360, 45), news_selected[0], fill=0, font=font14)
-            break
-        else:
-            if len(news_selected[i]) <= 3:
-                for j in range(len(news_selected[i])):
-                    display.draw_black.text((360, 45 + j * 15 + i * 60), news_selected[i][j], fill=0, font=font14)
-            else:
-                for j in range(2):
-                    display.draw_black.text((360, 45 + j * 15 + i * 60), news_selected[i][j], fill=0, font=font14)
-                display.draw_black.text(
-                    (360, 45 + 2 * 15 + i * 60),
-                    f"{news_selected[i][2]}[...]",
-                    fill=0,
-                    font=font14,
-                )
+    #news_selected = news.selected_title()
+    display.draw_black.text((360, 10), "Rob and Niamh - Malta 2024", fill=0, font=font24)
+    display.draw_image(360, 30, 200, 200, "nb")
+    #for i in range(5):
+    #    if len(news_selected) == 1:
+    #        display.draw_black.text((360, 45), news_selected[0], fill=0, font=font14)
+    #        break
+    #    else:
+    #        if len(news_selected[i]) <= 3:
+    #            for j in range(len(news_selected[i])):
+    #                display.draw_black.text((360, 45 + j * 15 + i * 60), news_selected[i][j], fill=0, font=font14)
+    #        else:
+    #            for j in range(2):
+    #                display.draw_black.text((360, 45 + j * 15 + i * 60), news_selected[i][j], fill=0, font=font14)
+    #            display.draw_black.text(
+    #                (360, 45 + 2 * 15 + i * 60),
+    #                f"{news_selected[i][2]}[...]",
+    #                fill=0,
+    #                font=font14,
+    #            )
 
     ###################################################################################################################
     print(Fore.GREEN + "Updating screen...")

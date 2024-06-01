@@ -51,3 +51,7 @@ class Display:
             self.im_black.paste(im_icon, (x, y), im_icon)
         else:
             self.im_red.paste(im_icon, (x, y), im_icon)
+
+    def draw_image(self, x, y, l, h, image):
+        image = Image.open(f"photo/{image}.png")
+        image = image.resize((l, h))
