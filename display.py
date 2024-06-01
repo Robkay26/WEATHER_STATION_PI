@@ -56,10 +56,23 @@ class Display:
         image = Image.open(f"photo/{image}.png")
         image = image.resize((l, h))
                 # Create masks for black and red
-        mask_black = ImageOps.invert(image.convert('L')).point(lambda p: p < 128 and 255)
-        mask_red = image.convert('L').point(lambda p: p > 127 and 255)
+        image_rgb = image.convert('RGB')
 
-        # Paste the masks onto the respective image layers
-        self.im_black.paste(image.convert('1'), (x, y), mask_black)
-        self.im_red.paste(image.convert('1'), (x, y), mask_red)
+        # Create black and red masks based on RGB values
+        mask_black = Image.new('1', image_rgb.size, 1)  # Start with a white mask
+        mask_red = Image.new('1', image_rgb.size, 1)    # Start with a white mask
+        pixels = image_rgb.load()
+
+        for i in range(image_rgb.width):
+            for j in range(image_rgb.height):
+                r, g, b = pixels[i, j]
+                if r < 128 and g < 128 and b < 128:
+                    mask_black.putpixel((i, j), 0)  # Black part
+                elif r > 127 and g < 128 and b < 128:
+                    mask_red.putpixel((i, j), 0)  # Red part
+
+        # Convert the image to black and white and paste it
+        image_bw = image.convert('1')
+        self.im_black.paste(image_bw, (x, y), mask_black)
+        self.im_red.paste(image_bw, (x, y), mask_red)
 

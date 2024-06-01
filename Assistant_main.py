@@ -229,8 +229,8 @@ def main():
     ###################################################################################################################
     # IMAGE UPDATE
     #news_selected = news.selected_title()
-    display.draw_black.text((390, 10), "Rob and Niamh - Malta 2024", fill=0, font=font24)
-    display.draw_image(410, 50, 290, 290, "nb")
+    display.draw_black.text((420, 10), "Rob and Niamh - Malta 2024", fill=0, font=font24)
+    display.draw_image(430, 50, 290, 290, "nb")
     #for i in range(5):
     #    if len(news_selected) == 1:
     #        display.draw_black.text((360, 45), news_selected[0], fill=0, font=font14)
