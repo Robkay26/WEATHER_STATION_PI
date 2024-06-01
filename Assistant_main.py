@@ -230,7 +230,7 @@ def main():
     # NEWS UPDATE
     #news_selected = news.selected_title()
     display.draw_black.text((360, 10), "Rob and Niamh - Malta 2024", fill=0, font=font24)
-    display.draw_image(360, 50, 330, 330, "nb")
+    display.draw_image(370, 50, 300, 300, "nb")
     #for i in range(5):
     #    if len(news_selected) == 1:
     #        display.draw_black.text((360, 45), news_selected[0], fill=0, font=font14)
