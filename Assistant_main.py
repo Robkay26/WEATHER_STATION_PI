@@ -268,7 +268,7 @@ if __name__ == "__main__":
         try:
             weather = Weather(lat, lon, api_key_weather)
             # pollution = Pollution()
-            news = News()
+            # news = News()
             break
         except Exception as e:
             current_time = time.strftime("%d/%m/%Y %H:%M:%S", time.localtime())
@@ -287,7 +287,7 @@ if __name__ == "__main__":
         weather.update()
         print(Fore.GREEN + "Weather Updated")
         # pollution.update(lat, lon, api_key_weather)
-        news.update(api_key_news)
+        #news.update(api_key_news)
         print(Fore.GREEN + "News Updated")
 
         print(Fore.GREEN + Style.BRIGHT + "Main program running...")
@@ -301,4 +301,4 @@ if __name__ == "__main__":
         print(Fore.CYAN + "Sleeping ZZZzzzzZZZzzz")
         print(Fore.CYAN + "Done")
         print("------------")
-        time.sleep(1800)
+        time.sleep(10800)
