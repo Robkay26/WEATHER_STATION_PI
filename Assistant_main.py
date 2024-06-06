@@ -278,27 +278,31 @@ if __name__ == "__main__":
 
     epd = epd7in5b_V2.EPD()
     while True:
-        # Defining objects
-        current_time = time.strftime("%d/%m/%Y %H:%M", time.localtime())
-        print(Fore.YELLOW + "Begin update at" + current_time)
-        print(Fore.YELLOW + "Creating display")
-        display = Display()
-        # Update values
-        weather.update()
-        print(Fore.GREEN + "Weather Updated")
-        # pollution.update(lat, lon, api_key_weather)
-        #news.update(api_key_news)
-        print(Fore.GREEN + "News Updated")
 
-        print(Fore.GREEN + Style.BRIGHT + "Main program running...")
-        epd.init()
-        epd.Clear()
-        check_for_shutdown()
-        main()
-        print(Fore.YELLOW + Style.BRIGHT + "Going to sleep...")
-        epd.init()
-        epd.sleep()
-        print(Fore.CYAN + "Sleeping ZZZzzzzZZZzzz")
-        print(Fore.CYAN + "Done")
-        print("------------")
-        time.sleep(10800)
+        try:
+            # Defining objects
+            current_time = time.strftime("%d/%m/%Y %H:%M", time.localtime())
+            print(Fore.YELLOW + "Begin update at" + current_time)
+            print(Fore.YELLOW + "Creating display")
+            display = Display()
+            # Update values
+            weather.update()
+            print(Fore.GREEN + "Weather Updated")
+            # pollution.update(lat, lon, api_key_weather)
+            #news.update(api_key_news)
+            print(Fore.GREEN + "News Updated")
+
+            print(Fore.GREEN + Style.BRIGHT + "Main program running...")
+            epd.init()
+            epd.Clear()
+            check_for_shutdown()
+            main()
+            print(Fore.YELLOW + Style.BRIGHT + "Going to sleep...")
+            epd.init()
+            epd.sleep()
+            print(Fore.CYAN + "Sleeping ZZZzzzzZZZzzz")
+            print(Fore.CYAN + "Done")
+            print("------------")
+            time.sleep(10800)
+        except Exception as e:
+            time.sleep(60)  # Wait 1 minute before retrying
