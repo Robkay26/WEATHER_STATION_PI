@@ -295,7 +295,7 @@ if __name__ == "__main__":
             print(Fore.GREEN + Style.BRIGHT + "Main program running...")
             epd.init()
             epd.Clear()
-            check_for_shutdown()
+            #check_for_shutdown()
             main()
             print(Fore.YELLOW + Style.BRIGHT + "Going to sleep...")
             epd.init()
