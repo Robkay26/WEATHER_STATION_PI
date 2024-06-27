@@ -89,7 +89,7 @@ def main():
         data_rain = weather.rain_next_hour()
 
         # FRAME
-        display.draw_black.text((20, 150), "upcoming rain - " + time.strftime("%H:%M", time.localtime()), fill=0,
+        display.draw_black.text((20, 150), "Next Hour? - " + time.strftime("%H:%M", time.localtime()), fill=0,
                                 font=font16)  # NEXT HOUR RAIN LABEL
         display.draw_black.rectangle((20, 175, 320, 195), fill=255, outline=0, width=1)  # Red rectangle = rain
 
@@ -303,6 +303,6 @@ if __name__ == "__main__":
             print(Fore.CYAN + "Sleeping ZZZzzzzZZZzzz")
             print(Fore.CYAN + "Done")
             print("------------")
-            time.sleep(10800)
+            time.sleep(3600)
         except Exception as e:
             time.sleep(60)  # Wait 1 minute before retrying
